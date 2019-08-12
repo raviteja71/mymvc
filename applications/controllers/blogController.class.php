@@ -28,27 +28,12 @@ class BlogController extends Controller {
         $blogModel = new BlogModel("articles");
 
         $blogs = $blogModel->getBlogs();
-
+        
+        //Load Variables
+        $this->data['blogs'] = $blogs[0];
+        
         // Load View template
         $this->setView('index.php');
-
-    }
-
-    public function menuAction(){
-
-        include CURR_VIEW_PATH . "menu.html";
-
-    }
-
-    public function dragAction(){
-
-        include CURR_VIEW_PATH . "drag.html";
-
-    }
-
-    public function topAction(){
-
-        include CURR_VIEW_PATH . "top.html";
 
     }
 
