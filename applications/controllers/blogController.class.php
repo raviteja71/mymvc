@@ -36,5 +36,19 @@ class BlogController extends Controller {
         $this->setView('index.php');
 
     }
+    
+    public function viewAction($arg){
+
+        $blogModel = new BlogModel("articles");
+
+        $blogs = $blogModel->getBlogs();
+        
+        //Load Variables
+        $this->data['blogs'] = $blogs[0];
+        
+        // Load View template
+        $this->setView('blog.php');
+
+    }
 
 }

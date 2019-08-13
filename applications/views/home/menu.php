@@ -8,7 +8,7 @@
 	<!-- end #header -->
 	<div id="menu">
 		<ul>
-			<li><a href="#">Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li class="current_page_item"><a href="#">Blog</a></li>
 			<li><a href="#">Photos</a></li>
 			<li><a href="#">About</a></li>
