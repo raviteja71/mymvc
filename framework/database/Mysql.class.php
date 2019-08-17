@@ -43,8 +43,13 @@ class Mysql{
         $charset = isset($config['charset'])? $config['charset'] : '3306';
 
        
-
-        $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+        try{
+            $this->conn = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $user, $password);
+            $this->conn->exec("set names utf8");
+        }catch(PDOException $exception){
+            echo "<center><b>Connection error: " . $exception->getMessage() . "</b></center>";
+        }
+        //$this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
     }
 
